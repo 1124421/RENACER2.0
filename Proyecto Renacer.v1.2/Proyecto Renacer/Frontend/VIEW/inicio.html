@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="assets/img/1.1.png" />
+    <link rel="icon"type="image/png"href="assets/img/logo.PNG"media="(prefers-color-scheme: light)"/>
+    <link rel="icon"type="image/png"href="assets/img/1.1.png"media="(prefers-color-scheme: dark)"/>
+    <title>Dashboard de Reciclaje</title>
+    
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-inicio.css" />
+    <link rel="stylesheet" href="css/perfil-dropdown.css" />
+    <!-- Librería de estilos para calendarios y selects -->
+    <link rel="stylesheet" href="css/libs/calendar-select.css" />
+    <!-- Librería de alerts personalizados -->
+    <link rel="stylesheet" href="css/libs/custom-alerts.css" />
+    <!-- Menú desplegable personalizado -->
+   
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"rel="stylesheet"/>
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+     <div id="menu-placeholder"></div>
+    <div class="container">
+      <main class="main-content">
+        <!-- Header -->
+        <div id="header-placeholder"></div>
+
+        <div class="welcome-banner">
+          <div class="welcome-header">
+            <h2 class="welcome-title" id="welcomeUserName">Buen día</h2>
+            <p class="welcome-date" id="currentDate"></p>
+          </div>
+          <p class="welcome-subtitle">
+            ¿Qué haremos hoy para cuidar la Tierra?
+          </p>
+        </div>
+
+        <!-- Activity Table -->
+        <div class="operations-table">
+          <h3 class="table-section-title">Actividad Reciente</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Fecha y hora</th>
+                <th>Tipo</th>
+                <th>Material</th>
+                <th>Cantidad (Kg)</th>
+                <th>Precio Total</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody id="actividadRecienteTbody">
+              <tr>
+                <td colspan="6" class="empty-state">
+                  <div class="empty-content">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="64"
+                      height="64"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
+                      <path
+                        d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                      ></path>
+                      <polyline
+                        points="3.27 6.96 12 12.01 20.73 6.96"
+                      ></polyline>
+                      <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                    </svg>
+                    <p class="empty-title">No hay actividad reciente</p>
+                    <p class="empty-subtitle">
+                      Las compras y ventas se mostrarán aquí en tiempo real
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="charts-section">
+          <!-- Pie Chart -->
+          <div class="chart-container">
+            <h3 class="chart-title">Materiales comprados hoy</h3>
+            <div class="chart-legend">
+              <div class="legend-item">
+                <div
+                  class="legend-color"
+                  style="background-color: #2d5a47"
+                ></div>
+                <span>Plástico</span>
+              </div>
+              <div class="legend-item">
+                <div
+                  class="legend-color"
+                  style="background-color: #4a9b9b"
+                ></div>
+                <span>Papel</span>
+              </div>
+              <div class="legend-item">
+                <div
+                  class="legend-color"
+                  style="background-color: #f59e0b"
+                ></div>
+                <span>Cartón</span>
+              </div>
+              <div class="legend-item">
+                <div
+                  class="legend-color"
+                  style="background-color: #ef4444"
+                ></div>
+                <span>Vidrio</span>
+              </div>
+            </div>
+            <div class="chart-wrapper">
+              <canvas id="pieChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Line Chart -->
+          <div class="chart-container">
+            <h3 class="chart-title">Materiales más comprados</h3>
+            <div class="chart-legend chart-legend-right">
+              <div class="legend-item">
+                <div
+                  class="legend-color"
+                  style="background-color: #2d5f5d"
+                ></div>
+                <span>Plástico</span>
+              </div>
+              <div class="legend-item">
+                <div
+                  class="legend-color"
+                  style="background-color: #f59e0b"
+                ></div>
+                <span>Papel</span>
+              </div>
+              <div class="legend-item">
+                <div
+                  class="legend-color"
+                  style="background-color: #4a9b9b"
+                ></div>
+                <span>Cartón</span>
+              </div>
+            </div>
+            <div class="chart-wrapper">
+              <canvas id="lineChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  
+    <!-- Contenedor para los modales (se cargarán dinámicamente) -->
+    <div id="modales-inicio-container"></div>
+
+    <script src="controller/js/libs/custom-alerts.js"></script>
+    <script src="controller/js/api.js"></script>
+    <script src="controller/js/modal-manager.js"></script>
+    <script src="controller/js/carga-menu.js"></script>
+    <script src="controller/js/carga-header.js"></script>
+    <script src="controller/js/perfil-dropdown.js"></script>
+    <script src="controller/js/carga-modales-inicio.js"></script>
+    <script src="controller/js/modales-compra-venta.js"></script>
+    <script src="controller/js/dashboard-operaciones.js"></script>
+    <script src="controller/js/dashboard-graficos.js"></script>
+    <script src="controller/js/inicio-dashboard.js"></script>
+  </body>
+</html>

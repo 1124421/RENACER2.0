@@ -1,0 +1,75 @@
+<!-- Modal Editar Asociado -->
+<div id="editarAsociadoModal" class="modal-overlay">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>
+        <img
+          class="modal-title-icon"
+          src="assets/img/imagenes/usersolo.svg"
+          alt="Editar Asociado"
+          style="
+            width: 22px;
+            height: 22px;
+            filter: invert(63%) sepia(83%) saturate(356%) hue-rotate(78deg)
+              brightness(95%) contrast(92%);
+          "
+        />
+        Editar Asociado
+      </h2>
+      <button class="close-modal" onclick="window.closeModal('editarAsociadoModal')">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="form-section">
+        <h3 class="section-title">Datos del Asociado</h3>
+        <div class="form-group">
+          <label>ID</label>
+          <input type="text" id="editIdUnico" placeholder="Ingrese aquí" />
+        </div>
+        <div class="form-group">
+          <label>Nombre completo del asociado</label>
+          <input type="text" id="editNombre" placeholder="Ingrese aquí" />
+        </div>
+        <div class="form-group">
+          <label>Documento</label>
+          <input type="text" id="editDocumento" placeholder="Ingrese aquí" />
+        </div>
+        <div class="form-group">
+          <label>Teléfono</label>
+          <input type="tel" id="editContacto" placeholder="Ingrese aquí" />
+        </div>
+        <div class="form-group">
+          <label>Correo Electrónico</label>
+          <input type="email" id="editCorreo" placeholder="Ingrese aquí" />
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3 class="section-title">Datos Laborales</h3>
+        <div class="form-group">
+          <label>Fecha actual</label>
+          <input type="text" id="editFechaInicio" readonly placeholder="Se calculará automáticamente" style="background-color: #f5f5f5; cursor: not-allowed;" />
+        </div>
+        <div class="form-group">
+          <label>Carreta</label>
+          <input type="text" id="editCarreta" placeholder="Ingrese aquí" />
+        </div>
+        <div class="form-group">
+          <label>Ruta</label>
+          <input type="text" id="editRuta" placeholder="Ingrese aquí" />
+        </div>
+        <div class="form-group">
+          <label>Tipo de asociado</label>
+          <input type="text" id="editTipoAsociado" placeholder="Ingrese aquí" />
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-secondary" onclick="window.closeModal('editarAsociadoModal')">
+        Cancelar
+      </button>
+      <button class="btn-primary" id="btnGuardarEditar" onclick="if(typeof inicializarBotonesGuardado === 'function' || document.getElementById('btnGuardarEditar')) { const btn = document.getElementById('btnGuardarEditar'); if(btn && !btn.dataset.procesado) { btn.click(); } }">Guardar cambios</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="assets/img/1.1.png" />
+    <link rel="icon"type="image/png"href="assets/img/logo.PNG" media="(prefers-color-scheme: light)"/>
+    <link rel="icon"type="image/png"href="assets/img/1.1.png"media="(prefers-color-scheme: dark)"/>
+    <title>Informes</title>
+
+    <!-- Estilos principales -->
+    <link rel="stylesheet" href="css/select.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-informe.css" />
+    <link rel="stylesheet" href="css/perfil-dropdown.css" />
+    <!-- Librería de estilos para calendarios y selects -->
+    <link rel="stylesheet" href="css/libs/calendar-select.css" />
+    <!-- Librería de alerts personalizados -->
+    <link rel="stylesheet" href="css/libs/custom-alerts.css" />
+    <!-- Menú desplegable personalizado -->
+    <link rel="stylesheet" href="css/menu-desplegable.css" />
+
+    <!-- Iconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"rel="stylesheet"/>
+    <!-- Flatpickr - Calendario moderno -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
+  </head>
+
+  <body>
+     <div id="menu-placeholder"></div>
+
+      <!-- Contenido principal -->
+      <main class="main-content" style="overflow: visible;">
+        <!-- Header -->
+        <div id="header-placeholder"></div>
+
+        <!-- Filtros -->
+        <section class="filters" style="overflow: visible;">
+          <div class="filter-group">
+            <label for="tipoRegistro">Tipo de registro</label>
+            <select id="tipoRegistro">
+              <option value="">Seleccione el registro</option>
+              <option value="todos">Todos</option>
+              <option value="registro-ventas">Informes de ventas</option>
+              <option value="registro-compras">Informes de compras</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="fechaDesde">Fecha desde</label>
+            <input type="text" id="fechaDesde" placeholder="Seleccionar fecha" />
+          </div>
+
+          <div class="filter-group">
+            <label for="fechaHasta">Fecha hasta</label>
+            <input type="text" id="fechaHasta" placeholder="Seleccionar fecha" />
+          </div>
+
+          <div class="filter-group">
+            <label for="estado">Estado</label>
+            <select id="estado">
+              <option value="todos">Todos</option>
+              <option value="diario">Diario</option>
+              <option value="semanal">Semanal</option>
+              <option value="mensual">Mensual</option>
+            </select>
+          </div>
+
+          <div class="filter-buttons">
+            <button class="clear" id="btn-clear">Limpiar filtros</button>
+            <button class="apply" id="btn-apply">Aplicar filtros</button>
+            <button class="export" id="btn-export">Exportar</button>
+          </div>
+        </section>
+
+        <!-- Tabla -->
+        <section class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Fecha y hora</th>
+                <th>Asociado</th>
+                <th>Documento</th>
+                <th>Carreta</th>
+                <th>Ruta</th>
+                <th>Material</th>
+                <th>Peso (Kg)</th>
+                <th>Precio Total</th>
+                <th>Rechazado</th>
+                <th>Tipo Asociado</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>001</td>
+                <td>10/06/25 18:30:10</td>
+                <td>Keinner Samuel</td>
+                <td>1.123.456.362</td>
+                <td>Ac232456B</td>
+                <td>232456B</td>
+                <td>Aluminio Chatarra</td>
+                <td>120.6 Kg</td>
+                <td>$159,000.00</td>
+                <td>2.6 Kg</td>
+                <td>Aforado</td>
+                <td class="actions">
+                  <button class="download" title="Descargar">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/></svg>
+                  </button>
+                  <button class="action-btn edit" title="Editar">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z"/></svg>
+                  </button>
+                  <button class="action-btn delete" title="Eliminar">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z"/></svg>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+      <div id="exportModalOverlay" class="modal-overlay hidden">
+        <div class="modal-content">
+            <h4>Exportar</h4>
+            <div class="export-options">
+                <a href="#" class="option-item pdf-option" data-format="PDF">
+                    <div class="icon-box">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    PDF
+                </a>
+                <a href="#" class="option-item excel-option" data-format="Excel">
+                    <div class="icon-box">
+                        <i class="fas fa-file-excel"></i>
+                    </div>
+                    Excel
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="controller/js/libs/select.js"></script>
+    <script src="controller/js/libs/custom-alerts.js"></script>
+    <script src="controller/js/api.js"></script>
+    <script src="controller/js/libs/menu-desplegable.js"></script>
+    <script src="controller/js/libs/init-calendarios.js"></script>
+    <script src="controller/js/carga-menu.js"></script>
+    <script src="controller/js/carga-header.js"></script>
+    <script src="controller/js/perfil-dropdown.js"></script>
+    <script src="controller/js/script-informes.js"></script>
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/exceljs@4.3.0/dist/exceljs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  </body>
+</html>

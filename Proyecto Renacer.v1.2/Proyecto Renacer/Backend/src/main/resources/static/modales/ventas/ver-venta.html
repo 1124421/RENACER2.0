@@ -1,0 +1,60 @@
+<div id="modalVerVenta" class="modal-overlay">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Ver Venta</h2>
+      <button class="close-modal" onclick="window.closeModal('modalVerVenta')">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="form-section">
+        <h3 class="section-title">Información General</h3>
+        <div class="form-group">
+          <label>ID Venta</label>
+          <p id="viewVentaId">-</p>
+        </div>
+        <div class="form-group">
+          <label>Fecha</label>
+          <p id="viewVentaFecha">-</p>
+        </div>
+        <div class="form-group">
+          <label>Cliente</label>
+          <p id="viewVentaCliente">-</p>
+        </div>
+        <div class="form-group">
+          <label>Documento/NIT</label>
+          <p id="viewVentaDocumento">-</p>
+        </div>
+        <div class="form-group">
+          <label>Total Venta</label>
+          <p id="viewVentaTotal">-</p>
+        </div>
+      </div>
+      <div class="form-section">
+        <h3 class="section-title">Detalles de Materiales</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Material</th>
+              <th>Cantidad (Kg)</th>
+              <th>Precio por Kg</th>
+              <th>Bodega Origen</th>
+              <th>Subtotal</th>
+            </tr>
+          </thead>
+          <tbody id="viewVentaDetalles">
+            <tr>
+              <td colspan="5" style="text-align: center; padding: 20px;">No hay detalles</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-secondary" onclick="window.closeModal('modalVerVenta')">
+        Cerrar
+      </button>
+    </div>
+  </div>
+</div>
+

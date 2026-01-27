@@ -1,0 +1,236 @@
+/* ==========================================
+   ARCHIVO: perfil.css
+   ========================================== */
+
+.perfil-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 0;
+    margin-top: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.perfil-left {
+    background: #ffffff;
+    border: 2px solid #2d5a47;
+    padding: 40px 30px;
+    text-align: center;
+    min-width: 0;
+    overflow-wrap: break-word;
+}
+
+.perfil-avatar-large {
+    width: 120px;
+    height: 120px;
+    background: #2d5a47;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 48px;
+    color: white;
+}
+
+.perfil-nombre-grande {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 8px;
+}
+
+.perfil-rol-grande {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+.perfil-contacto {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #cccccc;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.perfil-contacto-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #333333;
+    font-size: 14px;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+.perfil-contacto-item i {
+    width: 32px;
+    height: 32px;
+    background: #2d5a47;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.perfil-contacto-item span:first-of-type {
+    font-weight: 500;
+    min-width: 100px;
+    flex-shrink: 0;
+    color: #333333;
+}
+
+.perfil-contacto-item span:last-of-type {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    color: #333333;
+}
+
+.perfil-right {
+    background: #fff;
+    padding: 30px;
+}
+
+.perfil-titulo {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 24px;
+}
+
+.perfil-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.perfil-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.perfil-form-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .perfil-form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.perfil-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.perfil-form-group label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+}
+
+.perfil-form-group input {
+    padding: 8px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.2s;
+    height: 38px;
+    width: 100%;
+}
+
+.perfil-form-group input:disabled {
+    background: #f9fafb;
+    color: #6b7280;
+    cursor: not-allowed;
+}
+
+.perfil-form-group input:not(:disabled):focus {
+    outline: none;
+    border-color: #2d5a47;
+    box-shadow: 0 0 0 3px rgba(45, 90, 71, 0.1);
+}
+
+.perfil-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.configuracion-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.configuracion-titulo {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.configuracion-seccion {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+.configuracion-subtitulo {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.configuracion-subtitulo i {
+    color: #2d5a47;
+}
+
+.configuracion-form {
+    display: grid;
+    gap: 20px;
+}
+
+.btn-editar {
+    padding: 12px 32px;
+    background: #2d5a47;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-editar:hover {
+    background: #1e3a2f;
+}
+
+.btn-editar.guardar {
+    background: #2563eb;
+}
+
+.btn-editar.guardar:hover {
+    background: #1d4ed8;
+}

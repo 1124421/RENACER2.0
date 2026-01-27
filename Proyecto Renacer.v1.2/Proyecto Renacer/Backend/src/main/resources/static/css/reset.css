@@ -1,0 +1,115 @@
+:root {
+  --main-color-hover:#234134 ;
+  --main-color: #294F3E;
+  --planetaap-color: #3cac34;
+  --background-color: #F5F5F5;
+  --main-font: 'Poppins', sans-serif;
+}
+
+.reset {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.reset__background {
+  background-image: url(../assets/img/inicio.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  grid-column: 1 / 4;
+  grid-row: 1 / 6;
+}
+
+.reset__form {
+  grid-column: 4 / 6;
+  grid-row: 2/5;
+}
+
+.reset__card {
+  background-color: #fff;
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  text-align: center;
+  max-width: 420px;
+  width: 90%;
+}
+
+.reset__logo img {
+  width: 90px;
+  height: auto;
+  margin-bottom: 2rem;
+}
+
+.reset__title {
+  font-size: 2.4rem;
+  margin: 0 0 1rem 0;
+  font-family: var(--main-font);
+  font-weight: 500;
+  color: #333;
+}
+
+.reset__subtitle {
+  font-size: 1.6rem;
+  color: #555;
+  margin: 0 0 2rem 0;
+  font-family: var(--main-font);
+  font-weight: 400;
+  text-align: center;
+}
+
+.reset__input-group {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.8rem 1.2rem;
+  margin-bottom: 1.6rem;
+}
+
+.reset__input-group input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 1.6rem;
+  font-family: var(--main-font);
+  font-weight: 400;
+}
+
+.reset__button {
+  width: 100%;
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 1.2rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  font-family: var(--main-font);
+  font-weight: 500;
+}
+
+.reset__footer {
+  margin-top: 1.2rem;
+}
+
+.reset__link {
+  font-size: 1.4rem;
+  color: var(--main-color);
+  font-family: var(--main-font);
+}
+
+/* Code inputs */
+.reset__code-form { margin-top: 1rem; }
+.reset__code-inputs { display: flex; gap: 8px; justify-content: center; margin-bottom: 1.4rem; }
+.reset__code-inputs input {
+  width: 42px; height: 42px; text-align: center; font-size: 2rem;
+  border: 1px solid #ddd; border-radius: 8px; outline: none;
+  font-family: var(--main-font);
+}
+.reset__code-inputs input:focus { border-color: var(--planetaap-color); box-shadow: 0 0 0 2px rgba(60,172,52,0.15); }
+
+

@@ -1,0 +1,291 @@
+/* ========================================
+   ESTILOS ESPECÍFICOS: MODAL EDITAR ASOCIADO
+   ======================================== */
+
+#editarAsociadoModal.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(2px);
+  overflow-x: hidden !important;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+#editarAsociadoModal.modal-overlay.open,
+#editarAsociadoModal.modal-overlay[style*="display: flex"] {
+  display: flex !important;
+}
+
+/* ========================================
+   MODAL BOX
+   ======================================== */
+#editarAsociadoModal .modal-box {
+  background: #ffffff;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  animation: modalSlideIn 0.3s ease-out;
+  overflow-x: hidden !important;
+  box-sizing: border-box;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   MODAL HEADER
+   ======================================== */
+#editarAsociadoModal .modal-box-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+#editarAsociadoModal .modal-box-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+#editarAsociadoModal .modal-icon {
+  color: #6b7280;
+}
+
+#editarAsociadoModal .modal-close-btn {
+  background: transparent;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  color: #6b7280;
+}
+
+#editarAsociadoModal .modal-close-btn:hover {
+  background-color: #f3f4f6;
+  color: #111827;
+}
+
+#editarAsociadoModal .modal-close-btn:active {
+  transform: scale(0.95);
+}
+
+/* ========================================
+   MODAL BODY
+   ======================================== */
+#editarAsociadoModal .modal-box-body {
+  padding: 24px;
+  overflow-y: auto;
+  overflow-x: hidden !important;
+  flex: 1;
+  box-sizing: border-box;
+}
+
+/* Ocultar scrollbar pero mantener funcionalidad */
+#editarAsociadoModal .modal-box-body::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+#editarAsociadoModal .modal-box-body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+/* ========================================
+   FORM SECTIONS
+   ======================================== */
+#editarAsociadoModal .form-section-group {
+  margin-bottom: 32px;
+}
+
+#editarAsociadoModal .form-section-group:last-child {
+  margin-bottom: 0;
+}
+
+#editarAsociadoModal .form-section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 16px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* ========================================
+   FORM FIELDS
+   ======================================== */
+#editarAsociadoModal .form-field {
+  margin-bottom: 16px;
+}
+
+#editarAsociadoModal .form-field:last-child {
+  margin-bottom: 0;
+}
+
+#editarAsociadoModal .form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+#editarAsociadoModal .form-input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: #1f2937;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+#editarAsociadoModal .form-input::placeholder {
+  color: #9ca3af;
+}
+
+#editarAsociadoModal .form-input:focus {
+  outline: none;
+  background-color: #ffffff;
+  border-color: #2d5a47;
+  box-shadow: 0 0 0 3px rgba(45, 90, 71, 0.1);
+}
+
+#editarAsociadoModal .form-input:hover:not(:focus) {
+  border-color: #d1d5db;
+}
+
+/* ========================================
+   MODAL FOOTER
+   ======================================== */
+#editarAsociadoModal .modal-box-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 24px;
+  border-top: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+  border-radius: 0 0 12px 12px;
+}
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+#editarAsociadoModal .btn-cancel,
+#editarAsociadoModal .btn-save {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+#editarAsociadoModal .btn-cancel {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+#editarAsociadoModal .btn-cancel:hover {
+  background-color: #d1d5db;
+}
+
+#editarAsociadoModal .btn-cancel:active {
+  transform: scale(0.98);
+}
+
+#editarAsociadoModal .btn-save {
+  background-color: #2d5a47;
+  color: #ffffff;
+}
+
+#editarAsociadoModal .btn-save:hover {
+  background-color: #266160;
+}
+
+#editarAsociadoModal .btn-save:active {
+  transform: scale(0.98);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 640px) {
+  #editarAsociadoModal .modal-box {
+    max-width: 100%;
+    margin: 0;
+    border-radius: 12px;
+  }
+
+  #editarAsociadoModal .modal-box-header {
+    padding: 16px 20px;
+  }
+
+  #editarAsociadoModal .modal-box-title {
+    font-size: 16px;
+  }
+
+  #editarAsociadoModal .modal-box-body {
+    padding: 20px;
+  }
+
+  #editarAsociadoModal .modal-box-footer {
+    padding: 12px 20px;
+    flex-direction: column-reverse;
+  }
+
+  #editarAsociadoModal .btn-cancel,
+  #editarAsociadoModal .btn-save {
+    width: 100%;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+#editarAsociadoModal .modal-close-btn:focus,
+#editarAsociadoModal .form-input:focus,
+#editarAsociadoModal .btn-cancel:focus,
+#editarAsociadoModal .btn-save:focus {
+  outline: 2px solid #2d5a47;
+  outline-offset: 2px;
+}

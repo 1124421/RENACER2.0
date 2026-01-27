@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="assets/img/1.1.png" />
+    <link rel="icon"type="image/png"href="assets/img/logo.PNG"media="(prefers-color-scheme: light)"/>
+    <link rel="icon"type="image/png" href="assets/img/1.1.png" media="(prefers-color-scheme: dark)"/>
+    <title>Compras</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/estilo-asociado.css" />
+    <link rel="stylesheet" href="css/estilos-materiales.css" />
+    <link rel="stylesheet" href="css/perfil-dropdown.css" />
+    <link rel="stylesheet" href="css/libs/custom-alerts.css" />
+    <link rel="stylesheet" href="css/select.css" />
+    <link rel="stylesheet" href="css/libs/calendar-select.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
+  </head>
+
+  <body>
+     <div id="menu-placeholder"></div>
+    <div class="container">
+      <div class="main-content">
+        <!-- Header -->
+        <div id="header-placeholder"></div>
+
+        <main class="content">
+          <div class="content-header">
+            <div class="search-container">
+              <i class="fas fa-search"></i>
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Buscar compra por asociado, barrio..."
+                class="search-input"
+              />
+            </div>
+            <div class="tabs">
+              <button id="btnNuevaCompra" class="tab-btn">
+                Nueva Compra
+              </button>
+              <button id="btnVerCompras" class="tab-btn active">
+                Ver Compras
+              </button>
+            </div>
+          </div>
+
+          <!-- Sección Nueva Compra -->
+          <div id="nuevaCompraSection" class="section-content" style="display: none;">
+            <div class="form-section-compra" style="background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin-top: 20px;">
+              <h2 style="margin-bottom: 20px; color: #2d5a47; display: flex; align-items: center; gap: 10px;">
+                <img src="assets/img/imagenes/shopping.svg" alt="Registrar Compra" style="width: 22px; height: 22px; filter: invert(63%) sepia(83%) saturate(356%) hue-rotate(78deg) brightness(95%) contrast(92%);" />
+                Registrar Compra
+              </h2>
+              
+              <div class="form-section" style="display: block; background: transparent; padding: 0; border: none; margin-top: 0; margin-bottom: 20px;">
+                <h3 class="section-title">Seleccionar Asociado</h3>
+                <div class="tabs-asociado">
+                  <button type="button" id="btnAsociadoInscrito" class="btn-tab-asociado active">
+                    Asociado Inscrito
+                  </button>
+                  <button type="button" id="btnUsuarioSinRegistrar" class="btn-tab-asociado">
+                    Usuario sin Registrar
+                  </button>
+                </div>
+                <div id="panelAsociadoInscrito" class="panel-asociado">
+                  <div class="form-group">
+                    <div class="search-input">
+                      <img class="search-icon" src="assets/img/imagenes/search.svg" alt="Buscar" />
+                      <input type="text" placeholder="Buscar asociado inscrito" id="searchAsociadoCompra" />
+                    </div>
+                  </div>
+                  <div id="asociadoSeleccionadoInfo" style="margin-top: 10px; padding: 10px; background: #f3f4f6; border-radius: 4px; display: none;">
+                    <strong>Asociado seleccionado:</strong>
+                    <div id="asociadoInfoText"></div>
+                    <div id="asociadoCarretaRuta" style="margin-top: 8px; padding-top: 8px; border-top: 1px solid #ddd;">
+                      <div id="asociadoCarretaText" style="margin-bottom: 4px;"></div>
+                      <div id="asociadoRutaText"></div>
+                    </div>
+                  </div>
+                </div>
+                <div id="panelUsuarioSinRegistrar" class="panel-asociado" style="display: none;">
+                  <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" id="usuarioSinRegistrarNombre" placeholder="Nombre" />
+                  </div>
+                  <div class="form-group">
+                    <label>Apellido</label>
+                    <input type="text" id="usuarioSinRegistrarApellido" placeholder="Apellido" />
+                  </div>
+                  <div class="form-group">
+                    <label>Documento</label>
+                    <input type="text" id="usuarioSinRegistrarDocumento" placeholder="Número de documento" />
+                  </div>
+                  <div class="form-group">
+                    <label>Teléfono</label>
+                    <input type="text" id="usuarioSinRegistrarTelefono" placeholder="Teléfono" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-section" style="display: block; background: transparent; padding: 0; border: none; margin-top: 0; margin-bottom: 20px;">
+                <h3 class="section-title">Seleccionar Materiales (del Inventario)</h3>
+                <div class="form-group">
+                  <div class="search-input">
+                    <img class="search-icon" src="assets/img/imagenes/search.svg" alt="Buscar" />
+                    <input type="text" placeholder="Buscar materiales disponibles" id="searchMaterialCompra" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-section" style="display: block; background: transparent; padding: 0; border: none; margin-top: 0; margin-bottom: 20px;">
+                <h3 class="section-title">Materiales agregados</h3>
+                <div class="added-items">
+                  <p style="text-align: center; color: #999; padding: 20px;">No hay materiales agregados</p>
+                </div>
+              </div>
+
+              <div class="form-footer" style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
+                <div style="font-size: 1.2rem; font-weight: bold;">
+                  <span>Total de la compra: </span>
+                  <span id="totalCompraModal" style="color: #2d5a47;">$0.00</span>
+                </div>
+                <div class="form-actions">
+                  <button type="button" class="btn-secondary" id="btnCancelarCompra">
+                    Cancelar
+                  </button>
+                  <button type="button" class="btn-primary" id="btnFinalizarCompra">
+                    Finalizar Compra
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sección Ver Compras -->
+          <div id="verComprasSection" class="section-content">
+            <div class="filters">
+              <div class="filter-group">
+                <label>Fecha desde</label>
+                <input type="text" id="fechaDesdeCompra" placeholder="Seleccionar fecha" />
+              </div>
+
+              <div class="filter-group">
+                <label>Fecha hasta</label>
+                <input type="text" id="fechaHastaCompra" placeholder="Seleccionar fecha" />
+              </div>
+
+              <div class="filter-group">
+                <label>Asociado</label>
+                <select id="filtroAsociado">
+                  <option value="">Todos</option>
+                </select>
+              </div>
+
+              <div class="filter-group">
+                <label>Barrio/Ruta</label>
+                <select id="filtroBarrio">
+                  <option value="">Todos</option>
+                </select>
+              </div>
+
+              <div class="filter-actions">
+                <button class="btn-clear">Limpiar</button>
+                <button class="btn-apply">Aplicar</button>
+              </div>
+            </div>
+
+            <!-- Tabla de Compras -->
+            <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Fecha</th>
+                  <th>Asociado</th>
+                  <th>Documento</th>
+                  <th>Barrio/Ruta</th>
+                  <th>Carreta</th>
+                  <th>Materiales</th>
+                  <th>Total Pagado</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="comprasTbody">
+                <tr>
+                  <td colspan="9" style="text-align: center; padding: 40px; color: #999;">
+                    Cargando compras...
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- Contenedor para modales de compras (se cargan dinámicamente) -->
+    <div id="modales-compras-container"></div>
+
+    <script src="controller/js/libs/custom-alerts.js"></script>
+    <script src="controller/js/libs/date-utils.js"></script>
+    <script src="controller/js/api.js"></script>
+    <script src="controller/js/libs/select.js"></script>
+    <script src="controller/js/libs/init-calendarios.js"></script>
+    <script src="controller/js/modal-manager.js"></script>
+    <script src="controller/js/botones-globales.js"></script>
+    <script src="controller/js/carga-menu.js"></script>
+    <script src="controller/js/carga-header.js"></script>
+    <script src="controller/js/perfil-dropdown.js"></script>
+    <script src="controller/js/carga-modales-compras.js"></script>
+    <script src="controller/js/modales-compra-venta.js"></script>
+    <script src="controller/js/app-compras.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="assets/img/1.1.png" />
+    <link rel="icon"type="image/png"href="assets/img/logo.PNG"media="(prefers-color-scheme: light)"/>
+    <link rel="icon" type="image/png" href="assets/img/1.1.png"media="(prefers-color-scheme: dark)"/>
+    <title>Renacer - Verificar Código</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+  </head>
+  <body>
+    <main class="reset">
+      <div class="reset__background"></div>
+
+      <div class="reset__form flex-center">
+        <div class="reset__card">
+          <div class="reset__logo">
+            <img src="assets/img/logo.PNG" alt="logo de Planetapp" />
+          </div>
+          <h2 class="reset__title">Restablecer Contraseña</h2>
+          <p class="reset__subtitle">
+            Introduce el código de verificación que enviamos a tu correo.
+          </p>
+
+          <form id="reset-code-form" class="reset__code-form">
+            <div class="reset__code-inputs" data-length="6">
+              <input type="text" maxlength="1" inputmode="numeric" />
+              <input type="text" maxlength="1" inputmode="numeric" />
+              <input type="text" maxlength="1" inputmode="numeric" />
+              <input type="text" maxlength="1" inputmode="numeric" />
+              <input type="text" maxlength="1" inputmode="numeric" />
+              <input type="text" maxlength="1" inputmode="numeric" />
+            </div>
+            <button type="submit" class="reset__button btn--hover">
+              Restablecer
+            </button>
+          </form>
+
+          <div class="reset__footer">
+            <a href="cambio-contrasena-1.html" class="reset__link">Volver</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="controller/js/cambio_contraseña.js"></script>
+  </body>
+</html>

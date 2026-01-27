@@ -1,0 +1,43 @@
+<div id="modalEditarCategoriasNombres" class="modal">
+  <div class="modal-content" style="max-width: 900px; width: 95%; max-height: 90vh; overflow: hidden; display: flex; flex-direction: column;">
+    <h2 style="margin-bottom: 20px;">Editar Categorías y Nombres de Materiales</h2>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; flex: 1; overflow: hidden;">
+      <!-- Sección Categorías -->
+      <div style="display: flex; flex-direction: column; overflow: hidden;">
+        <h3 style="margin-bottom: 10px; color: #2d5a47;">Categorías</h3>
+        <input 
+          type="text" 
+          id="buscador-categorias-editar" 
+          placeholder="Buscar categorías..." 
+          style="padding: 8px; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 10px; width: 100%; box-sizing: border-box;"
+        />
+        <div id="lista-categorias-editar" style="flex: 1; overflow-y: auto; min-height: 0;">
+          <!-- Se cargará dinámicamente -->
+        </div>
+      </div>
+      
+      <!-- Sección Nombres de Materiales -->
+      <div style="display: flex; flex-direction: column; overflow: hidden;">
+        <h3 style="margin-bottom: 10px; color: #2d5a47;">Nombres de Materiales</h3>
+        <input 
+          type="text" 
+          id="buscador-nombres-editar" 
+          placeholder="Buscar nombres de materiales..." 
+          style="padding: 8px; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 10px; width: 100%; box-sizing: border-box;"
+        />
+        <div id="lista-nombres-materiales-editar" style="flex: 1; overflow-y: auto; min-height: 0;">
+          <!-- Se cargará dinámicamente -->
+        </div>
+      </div>
+    </div>
+    
+    <div id="error-editar-cat-nom" style="display: none; color: red; margin-top: 15px; padding: 10px; background: #fee; border-radius: 4px;"></div>
+    <div id="success-editar-cat-nom" style="display: none; color: green; margin-top: 15px; padding: 10px; background: #efe; border-radius: 4px;"></div>
+    
+    <div style="margin-top: 20px; text-align: right;">
+      <button type="button" class="btn btn-cancel" id="cancelar-editar-cat-nom" style="margin-right: 10px;">Cerrar</button>
+    </div>
+  </div>
+</div>
+

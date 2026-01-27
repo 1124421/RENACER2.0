@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="assets/img/1.1.png" />
+    <link rel="icon" type="image/png" href="assets/img/logo.PNG" media="(prefers-color-scheme: light)"/>
+    <link rel="icon" type="image/png" href="assets/img/1.1.png" media="(prefers-color-scheme: dark)"/>
+    <title>Perfil</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/perfil.css" />
+    <link rel="stylesheet" href="css/perfil-dropdown.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div id="menu-placeholder"></div>
+    <div class="container">
+      <main class="main-content">
+        <div id="header-placeholder"></div>
+
+        <div class="perfil-container">
+          <div class="perfil-left">
+            <div class="perfil-avatar-large">
+              <i class="fas fa-user"></i>
+            </div>
+            <h2 class="perfil-nombre-grande" id="nombreCompletoPerfil">Cargando...</h2>
+            <p class="perfil-rol-grande" id="rolPerfil">Cargando...</p>
+            <div class="perfil-contacto">
+              <div class="perfil-contacto-item">
+                <i class="fas fa-phone"></i>
+                <span>Telefono</span>
+                <span id="telefonoPerfil">-</span>
+              </div>
+              <div class="perfil-contacto-item">
+                <i class="fas fa-envelope"></i>
+                <span>Correo electrónico</span>
+                <span id="correoPerfil">-</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="perfil-right">
+            <h3 class="perfil-titulo">Información general</h3>
+            <form id="perfilForm" class="perfil-form">
+              <div class="perfil-form-grid">
+                <div class="perfil-form-column">
+                  <div class="perfil-form-group">
+                    <label>Primer nombres</label>
+                    <input type="text" id="primerNombre" placeholder="ingrese aqui" disabled />
+                  </div>
+                  <div class="perfil-form-group">
+                    <label>Primer apellidos</label>
+                    <input type="text" id="primerApellido" placeholder="ingrese aqui" disabled />
+                  </div>
+                  <div class="perfil-form-group">
+                    <label>Correo electrónico</label>
+                    <input type="email" id="correo" placeholder="ingrese aqui" disabled />
+                  </div>
+                  <div class="perfil-form-group">
+                    <label>Numero teléfono</label>
+                    <input type="tel" id="telefono" placeholder="ingrese aqui" disabled />
+                  </div>
+                </div>
+                <div class="perfil-form-column">
+                  <div class="perfil-form-group">
+                    <label>Segundo nombres</label>
+                    <input type="text" id="segundoNombre" placeholder="ingrese aqui" disabled />
+                  </div>
+                  <div class="perfil-form-group">
+                    <label>Segundo apellidos</label>
+                    <input type="text" id="segundoApellido" placeholder="ingrese aqui" disabled />
+                  </div>
+                  <div class="perfil-form-group">
+                    <label>Cédula</label>
+                    <input type="text" id="documento" placeholder="ingrese aqui" disabled />
+                  </div>
+                </div>
+              </div>
+              <div id="error-perfil" style="display: none; color: red; margin-bottom: 1rem; font-size: 0.9rem;"></div>
+              <div id="success-perfil" style="display: none; color: green; margin-bottom: 1rem; font-size: 0.9rem;"></div>
+              <div class="perfil-form-actions">
+                <button type="button" id="btnEditarGuardar" class="btn-editar">Editar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="controller/js/libs/custom-alerts.js"></script>
+    <script src="controller/js/api.js"></script>
+    <script src="controller/js/carga-menu.js"></script>
+    <script src="controller/js/carga-header.js"></script>
+    <script src="controller/js/perfil-dropdown.js"></script>
+    <script src="controller/js/perfil.js"></script>
+    <script>
+      setTimeout(() => {
+        const moduleTitle = document.getElementById('module-title');
+        if (moduleTitle) moduleTitle.textContent = 'Perfil';
+      }, 100);
+    </script>
+  </body>
+</html>

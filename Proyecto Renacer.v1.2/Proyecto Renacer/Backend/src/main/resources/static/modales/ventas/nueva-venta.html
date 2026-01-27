@@ -1,0 +1,84 @@
+<!-- Modal Registro de Ventas -->
+<div id="nuevaVentaModal" class="modal-overlay">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>
+            <img
+              class="modal-title-icon"
+              src="assets/img/imagenes/dollar.svg"
+              alt="Registrar venta"
+              style="
+                width: 22px;
+                height: 22px;
+                filter: invert(63%) sepia(83%) saturate(356%) hue-rotate(78deg)
+                  brightness(95%) contrast(92%);
+              "
+            />
+            Registrar venta
+          </h2>
+          <button class="close-modal" onclick="window.closeModal('nuevaVentaModal')">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-section">
+            <h3 class="section-title">Seleccionar Cliente</h3>
+            <div class="form-group">
+              <div class="search-input">
+                <img
+                  class="search-icon"
+                  src="assets/img/imagenes/search.svg"
+                  alt="Buscar"
+                />
+                <input
+                  type="text"
+                  placeholder="Buscar cliente"
+                  id="searchClienteVenta"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3 class="section-title">Seleccionar Materiales</h3>
+            <div class="form-group">
+              <div class="search-input">
+                <img
+                  class="search-icon"
+                  src="assets/img/imagenes/search.svg"
+                  alt="Buscar"
+                />
+                <input
+                  type="text"
+                  placeholder="Buscar materiales"
+                  id="searchMaterialVenta"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3 class="section-title">Materiales agregados</h3>
+            <div class="added-items">
+              <p style="text-align: center; color: #999; padding: 20px;">No hay materiales agregados</p>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3 class="section-title">Información Adicional</h3>
+            <div class="form-group">
+              <label>Bodega Origen</label>
+              <select id="bodegaNuevaVenta" class="custom-select">
+                <option value="">Seleccione una bodega</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn-secondary" onclick="window.closeModal('nuevaVentaModal')">
+            Cancelar
+          </button>
+          <button class="btn-primary" id="btnGuardarNuevaVenta">Guardar</button>
+        </div>
+      </div>
+    </div>

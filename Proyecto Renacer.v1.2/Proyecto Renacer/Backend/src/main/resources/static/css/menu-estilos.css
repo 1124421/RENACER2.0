@@ -1,0 +1,286 @@
+/* --- Reinicio y Estilos Base --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* --- Estilos de Scrollbar (Se mantiene la unificación) --- */
+.scrollable-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.scrollable-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.scrollable-list::-webkit-scrollbar-thumb {
+    background: #ddd;
+    border-radius: 3px;
+}
+
+.scrollable-list::-webkit-scrollbar-thumb:hover {
+    background: #2d5a47;
+}
+
+/* --- Estilos de Icono SVG con relleno --- */
+.menu-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 20px; /* Margen para el texto que le sigue */
+    flex-shrink: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    /* Esto es crucial para que el SVG se vea blanco sobre el fondo oscuro */
+    filter: brightness(0) invert(1);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+    border-radius: 4px; /* Esquinas redondas para iconos */
+}
+
+.menu a:hover .menu-icon, .logout a:hover .menu-icon {
+    transform: scale(1.1);
+}
+
+/* --- Estilos de Texto de la Sidebar (Corregido para usar .menu span y .logout span) --- */
+.menu span, .logout span {
+    font-size: 12px;
+    font-weight: 400;
+    opacity: 0; /* Oculto por defecto */
+    transform: translateX(-8px);
+    transition: opacity 0.22s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+    will-change: opacity, transform;
+}
+
+/* Mostrar textos cuando el sidebar tiene hover */
+.sidebar:hover .menu span, .sidebar:hover .logout span {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* --- 1. Barra Lateral (Sidebar) --- */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 80px; /* Cerrado por defecto (solo iconos) */
+    background-color: #2d5a47;
+    transition: width 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    will-change: width;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    /* Ocultar scrollbar pero mantener funcionalidad */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;
+    display: none;
+}
+
+/* Expandir con hover */
+.sidebar:hover {
+    width: 200px;
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Placeholder del menú para evitar que desaparezca durante la carga */
+#menu-placeholder {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 80px;
+    background-color: #2d5a47;
+    z-index: 999;
+    transition: width 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-x: hidden;
+    overflow-y: auto;
+    will-change: width;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    /* Ocultar scrollbar pero mantener funcionalidad */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+}
+
+#menu-placeholder::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;
+    display: none;
+}
+
+#menu-placeholder:empty::before {
+    /* Mostrar algo mientras carga */
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #2d5a47;
+}
+
+#menu-placeholder:hover {
+    width: 200px;
+}
+.logo {
+    /* Ajuste de padding: Aumentamos el espacio vertical */
+    padding: 20px 0 10px 0; /* 20px arriba, 10px abajo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Reducimos la altura forzada, ya que el padding hará el trabajo */
+    height: 90px;
+    
+    /* AÑADIR LA LÍNEA SEPARADORA */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* Línea blanca semitransparente */
+    margin-bottom: 0; /* Eliminamos el margin-bottom para que la línea esté pegada a los enlaces */
+}
+
+.logo-icon {
+    width: 32px;
+    height: 32px;
+    background-image: url("../assets/img/1.1.png"); /* Asegúrate de que esta ruta sea correcta */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.menu {
+    flex: 1;
+    padding: 0;
+}
+
+/* Estilo base para todos los enlaces en el menú y logout */
+.menu a, .logout a {
+    display: flex;
+    align-items: center;
+    padding: 20px 20px 20px 30px; /* Ajuste para el menú principal */
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.18s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    border-radius: 0 8px 8px 0;
+    margin-right: 8px;
+}
+
+.menu a:active, .logout a:active {
+    transform: scale(0.98);
+}
+
+.logout a {
+    padding: 25px 20px; /* Ajuste específico para el enlace de logout */
+}
+
+/* Iconos específicos de la sidebar - SVG con relleno de assets/vectores */
+.menu a:nth-child(1) .menu-icon { background-image: url("../assets/vectores/home.svg"); }
+.menu a:nth-child(2) .menu-icon { background-image: url("../assets/vectores/shopping-cart.svg"); }
+.menu a:nth-child(3) .menu-icon { background-image: url("../assets/vectores/sack-dollar.svg"); }
+.menu a:nth-child(4) .menu-icon { background-image: url("../assets/vectores/document.svg"); }
+.menu a:nth-child(5) .menu-icon { background-image: url("../assets/vectores/users.svg"); }
+.menu a:nth-child(6) .menu-icon { background-image: url("../assets/vectores/boxes.svg"); }
+/* Inventario usa Font Awesome - se maneja con .menu-icon-fa */
+.menu a:nth-child(8) .menu-icon { background-image: url("../assets/vectores/user.svg"); }
+.menu a:nth-child(9) .menu-icon { background-image: url("../assets/vectores/ajustes.svg"); }
+.logout .menu-icon { background-image: url("../assets/vectores/exit.svg"); }
+
+/* Estilo para icono Font Awesome de inventario */
+.menu-icon-fa {
+    background-image: none !important;
+    filter: none !important;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estados */
+.menu .enlace--activo {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-left: 3px solid rgba(255, 255, 255, 0.3);
+    padding-left: 27px; /* Ajustar para compensar el borde */
+}
+
+.menu a:hover, .logout a:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    transform: translateX(2px);
+}
+
+.logout {
+    margin-top: auto;
+    padding: 0;
+}
+
+/* ============================================
+   MODO DALTÓNICO (aplicar a TODA la app)
+   Nota: el modo se activa con body.daltonico (localStorage)
+   ============================================ */
+body.daltonico {
+    background-color: #f3f6fb;
+}
+
+body.daltonico .sidebar,
+body.daltonico #menu-placeholder,
+body.daltonico #menu-placeholder:empty::before {
+    background-color: #0b2a4a;
+}
+
+body.daltonico .menu a:hover,
+body.daltonico .logout a:hover {
+    /* Azul solo como indicador/borde, texto en blanco */
+    color: #FFFFFF;
+    background-color: rgba(31, 111, 235, 0.12);
+    box-shadow: inset 3px 0 0 var(--primary);
+}
+
+body.daltonico .menu .enlace--activo {
+    /* Activo: texto blanco, indicador azul */
+    color: #FFFFFF;
+    background-color: rgba(255, 255, 255, 0.10);
+    border-left: none;
+    padding-left: 30px; /* mantener alineación (sin compensar borde) */
+    box-shadow: inset 3px 0 0 var(--primary);
+}
+
+body.daltonico .menu a,
+body.daltonico .logout a {
+    color: #EAEAEA;
+}
+
+body.daltonico .menu .enlace--activo span,
+body.daltonico .menu a:hover span,
+body.daltonico .logout a:hover span {
+    color: #FFFFFF;
+}
+
+/* Inventario usa FontAwesome */
+body.daltonico .menu-icon-fa {
+    color: #EAEAEA;
+}
+body.daltonico .menu .enlace--activo .menu-icon-fa,
+body.daltonico .menu a:hover .menu-icon-fa {
+    color: #FFFFFF;
+}
+
+body.daltonico .scrollable-list::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
+

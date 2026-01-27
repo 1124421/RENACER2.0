@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="assets/img/1.1.png" />
+    <link rel="icon"type="image/png"href="assets/img/logo.PNG"media="(prefers-color-scheme: light)"/>
+    <link rel="icon"type="image/png" href="assets/img/1.1.png" media="(prefers-color-scheme: dark)"/>
+    <title>Inventario</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-informe.css" />
+    <link rel="stylesheet" href="css/perfil-dropdown.css" />
+    <link rel="stylesheet" href="css/libs/custom-alerts.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"rel="stylesheet"/>
+
+    <style>
+      .inventario-container {
+        padding: 20px;
+      }
+
+      .inventario-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .inventario-header h1 {
+        margin: 0;
+        color: #2d5a47;
+      }
+
+      .search-bar {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .search-bar input {
+        width: 100%;
+        max-width: 400px;
+        padding: 10px 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 14px;
+      }
+      
+      .actions {
+        display: flex;
+        gap: 8px;
+      }
+    </style>
+  </head>
+
+  <body>
+     <div id="menu-placeholder"></div>
+    <div class="container">
+    
+      <div class="main-content">
+        <!-- Header -->
+        <div id="header-placeholder"></div>
+
+        <main class="content">
+          <div class="inventario-container">
+            <div class="inventario-header">
+              <h1>Inventario</h1>
+            </div>
+
+            <div class="search-bar">
+              <div class="search-input" style="position: relative; max-width: 400px;">
+                <img class="search-icon" src="assets/img/imagenes/search.svg" alt="Buscar" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; filter: invert(63%) sepia(83%) saturate(356%) hue-rotate(78deg) brightness(95%) contrast(92%);" />
+                <input
+                  type="text"
+                  id="searchInventario"
+                  placeholder="Buscar Material por código, descripción o categoria"
+                  style="width: 100%; padding: 10px 15px 10px 40px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px;"
+                />
+              </div>
+              <button class="btn-primary" id="btnBuscarInventario" style="margin-left: 10px; padding: 10px 20px; border-radius: 8px;">
+                Busca
+              </button>
+            </div>
+
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Descripción</th>
+                    <th>Categoria</th>
+                    <th>Precio por kg</th>
+                    <th>Precio venta</th>
+                    <th>Cantidad en kg</th>
+                    <th>Fecha creación</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody id="inventarioTbody">
+                  <tr>
+                    <td colspan="8" class="empty-state" style="text-align: center; padding: 40px; color: #999;">
+                      No hay materiales en el inventario
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="controller/js/libs/custom-alerts.js"></script>
+    <script src="controller/js/api.js"></script>
+    <script src="controller/js/carga-menu.js"></script>
+    <script src="controller/js/carga-header.js"></script>
+    <script src="controller/js/perfil-dropdown.js"></script>
+    <script src="controller/js/app-inventario.js"></script>
+  </body>
+</html>

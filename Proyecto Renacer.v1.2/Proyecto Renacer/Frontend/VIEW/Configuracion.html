@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="assets/img/1.1.png" />
+    <link rel="icon" type="image/png" href="assets/img/logo.PNG" media="(prefers-color-scheme: light)"/>
+    <link rel="icon" type="image/png" href="assets/img/1.1.png" media="(prefers-color-scheme: dark)"/>
+    <title>Configuración</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/perfil.css" />
+    <link rel="stylesheet" href="css/perfil-dropdown.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div id="menu-placeholder"></div>
+    <div class="container">
+      <main class="main-content">
+        <div id="header-placeholder"></div>
+
+        <div class="configuracion-container">
+          <h2 class="configuracion-titulo">Configuración de Cuenta</h2>
+          
+          <!-- Sección Cambiar Contraseña -->
+          <div class="configuracion-seccion">
+            <h3 class="configuracion-subtitulo">
+              <i class="fas fa-lock"></i> Cambiar Contraseña
+            </h3>
+            <form id="form-cambiar-contrasena" class="configuracion-form">
+              <div class="perfil-form-group">
+                <label>Pregunta Secreta</label>
+                <p id="preguntaSecretaMostrar" style="background: #f5f5f5; padding: 12px; border-radius: 8px; margin: 0; color: #555; font-size: 14px;">Cargando pregunta secreta...</p>
+              </div>
+              <div class="perfil-form-group">
+                <label>Respuesta Secreta</label>
+                <input type="text" id="respuestaSecretaContrasena" placeholder="Ingrese su respuesta secreta" required />
+              </div>
+              <div class="perfil-form-group">
+                <label>Nueva Contraseña</label>
+                <input type="password" id="nuevaContrasena" placeholder="Ingrese nueva contraseña" required />
+              </div>
+              <div class="perfil-form-group">
+                <label>Confirmar Contraseña</label>
+                <input type="password" id="confirmarContrasena" placeholder="Confirme la nueva contraseña" required />
+              </div>
+              <div id="error-contrasena" style="display: none; color: red; margin-bottom: 1rem; font-size: 0.9rem;"></div>
+              <div id="success-contrasena" style="display: none; color: green; margin-bottom: 1rem; font-size: 0.9rem;"></div>
+              <button type="submit" class="btn-editar">
+                Cambiar Contraseña
+              </button>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="controller/js/libs/custom-alerts.js"></script>
+    <script src="controller/js/api.js"></script>
+    <script src="controller/js/carga-menu.js"></script>
+    <script src="controller/js/carga-header.js"></script>
+    <script src="controller/js/perfil-dropdown.js"></script>
+    <script src="controller/js/configuracion.js"></script>
+    <script>
+      setTimeout(() => {
+        const moduleTitle = document.getElementById('module-title');
+        if (moduleTitle) moduleTitle.textContent = 'Configuración';
+      }, 100);
+    </script>
+  </body>
+</html>
+
