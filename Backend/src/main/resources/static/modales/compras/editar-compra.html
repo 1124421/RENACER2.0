@@ -1,0 +1,49 @@
+<div id="editarCompraModal" class="modal-overlay" style="display: flex; align-items: center; justify-content: center; padding: 20px;">
+  <div class="modal-content" style="width: 90% !important; max-width: 1200px !important; max-height: 95vh !important; overflow-y: auto !important; margin: 0 auto !important; position: relative !important;">
+    <div class="modal-header" style="background: linear-gradient(135deg, #2d5a47 0%, #1e3d2f 100%); color: white; border-radius: 0.75rem 0.75rem 0 0; padding: 1.5rem 2rem;">
+      <h2 style="color: white; margin: 0; font-size: 1.75rem;">Editar Compra</h2>
+      <button class="close-modal" onclick="window.closeModal('editarCompraModal')" style="color: white; font-size: 1.5rem;">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="modal-body" style="padding: 2.5rem; display: block !important; visibility: visible !important; min-height: 200px; width: 100%; box-sizing: border-box;">
+      <div class="form-section" style="display: block !important; visibility: visible !important; opacity: 1 !important; margin-bottom: 2rem; background: #f9fafb; padding: 2rem; border-radius: 8px; border: 1px solid #e5e7eb;">
+        <h3 class="section-title" style="color: #2d5a47; font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid #2d5a47;">Información de la Compra</h3>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; width: 100%; box-sizing: border-box;">
+          <div class="form-group" style="display: block !important; visibility: visible !important;">
+            <label style="display: block; font-weight: 600; color: #374151; margin-bottom: 0.75rem; font-size: 1rem;">Asociado <span style="color: #dc3545;">*</span></label>
+            <select id="editAsociadoCompra" class="custom-select" style="display: block !important; visibility: visible !important; opacity: 1 !important; width: 100%; padding: 14px 16px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 1.125rem; background: white; cursor: pointer;">
+              <option value="">Seleccione un asociado</option>
+            </select>
+            <small style="color: #6b7280; font-size: 0.875rem; display: block; margin-top: 6px;">Solo cambiar el asociado de la compra</small>
+          </div>
+          <div class="form-group" style="display: block !important; visibility: visible !important;">
+            <label style="display: block; font-weight: 600; color: #374151; margin-bottom: 0.75rem; font-size: 1rem;">Barrio/Ruta <span style="color: #dc3545;">*</span></label>
+            <select id="editBarrioCompra" class="custom-select" style="display: block !important; visibility: visible !important; opacity: 1 !important; width: 100%; padding: 14px 16px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 1.125rem; background: white; cursor: pointer;">
+              <option value="">Seleccione un barrio</option>
+            </select>
+          </div>
+          <div class="form-group" style="display: block !important; visibility: visible !important;">
+            <label style="display: block; font-weight: 600; color: #374151; margin-bottom: 0.75rem; font-size: 1rem;">Carreta</label>
+            <input type="text" id="editCarretaCompra" placeholder="Número de carreta (opcional)" style="display: block !important; visibility: visible !important; opacity: 1 !important; width: 100%; padding: 14px 16px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 1.125rem; background: white;" />
+          </div>
+        </div>
+      </div>
+      <div class="form-section" style="display: block !important; visibility: visible !important; opacity: 1 !important; background: #f9fafb; padding: 2rem; border-radius: 8px; border: 1px solid #e5e7eb;">
+        <h3 class="section-title" style="color: #2d5a47; font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid #2d5a47;">Detalles de Materiales</h3>
+        <div id="editDetallesCompra" style="min-height: 100px; display: block !important; visibility: visible !important; opacity: 1 !important; max-height: 500px; overflow-y: auto; padding: 15px; background: white; border-radius: 6px; width: 100%; box-sizing: border-box;">
+          <!-- Detalles se cargan dinámicamente -->
+          <p style="text-align: center; color: #999; padding: 20px; margin: 0;">Cargando detalles...</p>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer" style="padding: 1.5rem; border-top: 1px solid #e5e7eb; background: #f9fafb; border-radius: 0 0 0.75rem 0.75rem; display: flex; justify-content: flex-end; gap: 1rem;">
+      <button class="btn-secondary" onclick="window.closeModal('editarCompraModal')" style="padding: 10px 24px; background: #6b7280; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 500; transition: background 0.2s;">
+        Cancelar
+      </button>
+      <button class="btn-primary" id="btnGuardarEditarCompra" style="padding: 10px 24px; background: #2d5a47; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 500; transition: background 0.2s;">
+        Guardar Cambios
+      </button>
+    </div>
+  </div>
+</div>

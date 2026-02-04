@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="assets/img/1.1.png" />
+    <link rel="icon"type="image/png"href="assets/img/logo.PNG"media="(prefers-color-scheme: light)"/>
+    <link rel="icon"type="image/png"href="assets/img/1.1.png"media="(prefers-color-scheme: dark)"/>
+    <title>Gestión de Materiales</title>
+   
+    
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/estilos-materiales.css" />
+    <link rel="stylesheet" href="css/perfil-dropdown.css" />
+    <!-- Librería de estilos para calendarios y selects -->
+    <link rel="stylesheet" href="css/libs/calendar-select.css" />
+    <!-- Librería de alerts personalizados -->
+  <link rel="stylesheet" href="css/libs/custom-alerts.css" />
+    <!-- Menú desplegable personalizado -->
+    <link rel="stylesheet" href="css/select.css" />
+   
+    <!-- Íconos FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+
+    <!-- Flatpickr - Calendario moderno -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+  </head>
+  <body>
+    
+    <div id="menu-placeholder"></div>
+      
+      <main class="main-content">
+        <!-- Header -->
+        <div id="header-placeholder"></div>
+
+        <!-- Content -->
+        <div class="content">
+          <!-- Search and Tabs -->
+          <div class="content-header">
+            <div class="search-container">
+              <i class="fas fa-search"></i>
+              <input
+                type="text"
+                placeholder="Buscar equipado"
+                class="search-input"
+              />
+            </div>
+            <div class="tabs">
+              <button id="btnCategoria" class="tab-btn">
+                Agregar categoría
+              </button>
+              <button id="btnNombreMaterial" class="tab-btn">
+                Agregar nombre de material
+              </button>
+              <button id="btnNuevoMaterial" class="tab-btn active">
+                Nuevo material
+              </button>
+              <button id="btnEditar" class="tab-btn">
+                Editar
+              </button>
+            </div>
+          </div>
+
+          <!-- Form Section -->
+          <div id="formSection" class="form-section">
+            <h2>Agregar nuevo material</h2>
+            <form class="material-form" id="materialForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="codigo">Código del material</label>
+                  <input
+                    type="text"
+                    id="codigo"
+                    name="codigo"
+                    placeholder="Ingrese aquí"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="nombre-material">Nombre del material</label>
+                  <select id="nombre-material" name="nombre-material" data-searchable>
+                    <option value="">Seleccione un nombre de material</option>
+                    <!-- Los nombres de materiales se cargarán dinámicamente desde la base de datos -->
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="precio-unidad">Precio por kilogramo</label>
+                  <input
+                    type="number"
+                    id="precio-unidad"
+                    name="precio-unidad"
+                    placeholder="Ingrese aquí"
+                    step="0.01"
+                  />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="precio-venta">Precio de venta</label>
+                  <input
+                    type="number"
+                    id="precio-venta"
+                    name="precio-venta"
+                    placeholder="Ingrese aquí"
+                    step="0.01"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="categoria">Categoría de material</label>
+                  <select id="categoria" name="categoria" data-searchable>
+                    <option value="">Seleccione una categoría</option>
+                    <!-- Las categorías se cargarán dinámicamente desde la base de datos -->
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="button" class="btn btn-cancel">Cancelar</button>
+                <button type="submit" class="btn btn-save">
+                  Guardar material
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Inventory Section -->
+          <div id="inventorySection" class="inventory-section">
+            <table class="inventory-table">
+              <thead>
+                <tr>
+                  <th>Código</th>
+                  <th>Nombre del material</th>
+                  <th>Categoría</th>
+                  <th>Precio unitario</th>
+                  <th>Precio de venta</th>
+                  <th>Cantidad</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>PLA001</td>
+                  <td>Botellas PET</td>
+                  <td>Plásticos</td>
+                  <td>$1,200</td>
+                  <td>$2,000</td>
+                  <td>58</td>
+                  <td>
+                    <button class="action-btn delete">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                          d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z"
+                        />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>PLA001</td>
+                  <td>Botellas PET</td>
+                  <td>Plásticos</td>
+                  <td>$1,200</td>
+                  <td>$2,000</td>
+                  <td>58</td>
+                  <td>
+                    <button class="action-btn delete">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                          d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z"
+                        />
+                      </svg>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+ 
+     
+    
+    <!-- Script de ejemplo removido - las funciones showSuccess/showError se cargan desde custom-alerts.js -->
+
+    <!-- Contenedor para los modales (se cargarán dinámicamente) -->
+    <div id="modales-material-container"></div>
+    <script src="controller/js/libs/custom-alerts.js"></script>
+    <script src="controller/js/api.js"></script>
+    <script src="controller/js/libs/select.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="controller/js/modal-manager.js"></script>
+    <script src="controller/js/botones-globales.js"></script>
+    <script src="controller/js/carga-menu.js"></script>
+    <script src="controller/js/carga-header.js"></script>
+    <script src="controller/js/perfil-dropdown.js"></script>
+    <script src="controller/js/carga-modales-material.js"></script>
+    <script src="controller/js/material.js"></script>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="assets/img/1.1.png" />
+    <link rel="icon" type="image/png" href="assets/img/logo.PNG" media="(prefers-color-scheme: light)"/>
+    <link rel="icon" type="image/png" href="assets/img/1.1.png" media="(prefers-color-scheme: dark)"/>
+    <title>Gestión de Categorías</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/estilos-materiales.css" />
+    <link rel="stylesheet" href="css/estilos-categorias.css" />
+    <link rel="stylesheet" href="css/perfil-dropdown.css" />
+    <link rel="stylesheet" href="css/libs/custom-alerts.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div id="menu-placeholder"></div>
+
+    <main class="main-content">
+      <div id="header-placeholder"></div>
+
+      <div class="content">
+        <div class="content-header content-header-categorias">
+          <div class="search-container">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Buscar categoría" class="search-input" id="buscadorCategorias" />
+          </div>
+          <button id="btnAgregarCategoria" class="tab-btn active">
+            <i class="fas fa-plus"></i> Agregar categoría
+          </button>
+        </div>
+
+        <!-- Categorías como carpetas -->
+        <div id="categoriasFoldersSection" class="categorias-folders-section">
+          <h3 class="categorias-folders-title">Categorías</h3>
+          <div id="categoriasFoldersGrid" class="categorias-folders-grid">
+            <!-- Las categorías se cargarán dinámicamente -->
+          </div>
+        </div>
+
+        <!-- Lista de materiales de la categoría seleccionada -->
+        <div id="materialesCategoriaSection" class="materiales-categoria-section" style="display: none;">
+          <div class="materiales-categoria-header">
+            <h3 id="materialesCategoriaTitulo">Materiales de: <span id="categoriaNombreActual"></span></h3>
+            <button type="button" class="btn-cerrar-materiales" id="btnCerrarMateriales" title="Cerrar">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="materiales-categoria-lista" id="materialesCategoriaLista">
+            <!-- Lista de materiales se cargará dinámicamente -->
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="modales-categorias-container"></div>
+    <script src="controller/js/libs/custom-alerts.js"></script>
+    <script src="controller/js/api.js"></script>
+    <script src="controller/js/carga-menu.js"></script>
+    <script src="controller/js/carga-header.js"></script>
+    <script src="controller/js/perfil-dropdown.js"></script>
+    <script src="controller/js/carga-modales-categorias.js"></script>
+    <script src="controller/js/categorias.js"></script>
+  </body>
+</html>

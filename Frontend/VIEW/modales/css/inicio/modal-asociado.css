@@ -1,0 +1,103 @@
+/* ========================================
+   ESTILOS ESPECÍFICOS: MODAL ASOCIADO (INICIO)
+   ======================================== */
+
+#asociadoModal.modal {
+    overflow-x: hidden !important;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+#asociadoModal .modal-content {
+    max-width: 650px;
+    overflow-x: hidden !important;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+/* Ocultar scrollbars pero mantener funcionalidad */
+#asociadoModal .modal-content::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+#asociadoModal .modal-content {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+}
+
+#asociadoModal .modal-header h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#asociadoModal .modal-title-icon {
+    width: 22px;
+    height: 22px;
+    filter: invert(63%) sepia(83%) saturate(356%) hue-rotate(78deg) brightness(95%) contrast(92%);
+}
+
+#asociadoModal .form-section {
+    margin-bottom: 1.5rem;
+}
+
+#asociadoModal .section-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 1rem;
+}
+
+#asociadoModal .form-group {
+    margin-bottom: 1rem;
+}
+
+#asociadoModal .form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.5rem;
+}
+
+#asociadoModal .form-group input {
+    width: 100%;
+    padding: 0.625rem 0.875rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+#asociadoModal .form-group input:focus {
+    outline: none;
+    border-color: #2d5a47;
+    box-shadow: 0 0 0 3px rgba(45, 90, 71, 0.1);
+}
+
+#asociadoModal .form-group input::placeholder {
+    color: #9ca3af;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #asociadoModal .modal-content {
+        width: 95%;
+        max-height: 95vh;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

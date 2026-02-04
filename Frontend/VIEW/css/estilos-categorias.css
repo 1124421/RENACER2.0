@@ -1,0 +1,136 @@
+/* Estilos específicos para el módulo de Categorías */
+
+.content-header-categorias {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.content-header-categorias .search-container {
+  flex: 1;
+  min-width: 200px;
+}
+
+.content-header-categorias .tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Carpeta expandible - materiales visibles */
+.categoria-folder-card.expandida {
+  border-color: #2d5a47;
+  background: #eef5f1;
+  box-shadow: 0 4px 12px rgba(45, 90, 71, 0.2);
+}
+
+.categoria-folder-card.expandida .categoria-folder-icon i {
+  transform: rotate(0deg);
+}
+
+/* Sección de materiales de categoría */
+.materiales-categoria-section {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 20px 0;
+  overflow: hidden;
+}
+
+.materiales-categoria-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+}
+
+.materiales-categoria-header h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.materiales-categoria-header h3 span {
+  color: #2d5a47;
+  font-weight: 600;
+}
+
+.btn-cerrar-materiales {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: rgba(45, 90, 71, 0.1);
+  color: #2d5a47;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.btn-cerrar-materiales:hover {
+  background: #2d5a47;
+  color: white;
+}
+
+/* Lista de materiales en categoría */
+.materiales-categoria-lista {
+  padding: 15px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.materiales-categoria-lista .materiales-tabla {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.materiales-categoria-lista .materiales-tabla th {
+  background: #f8f9fa;
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 13px;
+  color: #555;
+  border-bottom: 1px solid #ddd;
+}
+
+.materiales-categoria-lista .materiales-tabla td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #eee;
+  font-size: 13px;
+}
+
+.materiales-categoria-lista .materiales-tabla tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.materiales-categoria-lista .acciones-material {
+  display: flex;
+  gap: 6px;
+}
+
+.materiales-categoria-lista .acciones-material .action-btn {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.materiales-categoria-lista .acciones-material .action-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.mensaje-sin-materiales {
+  text-align: center;
+  padding: 30px;
+  color: #999;
+  font-size: 14px;
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="assets/img/1.1.png" />
+    <link rel="icon"type="image/png"href="assets/img/logo.PNG"media="(prefers-color-scheme: light)"/>
+    <link rel="icon"type="image/png" href="assets/img/1.1.png" media="(prefers-color-scheme: dark)"/>
+    <title>Ventas</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/estilo-asociado.css" />
+    <link rel="stylesheet" href="css/perfil-dropdown.css" />
+    <link rel="stylesheet" href="css/libs/custom-alerts.css" />
+    <link rel="stylesheet" href="css/select.css" />
+    <link rel="stylesheet" href="css/libs/calendar-select.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
+  </head>
+
+  <body>
+     <div id="menu-placeholder"></div>
+    <div class="container">
+      <div class="main-content">
+        <!-- Header -->
+        <div id="header-placeholder"></div>
+
+        <main class="content">
+          <div class="search-section">
+            <div class="search-and-new">
+              <div class="search-bar">
+                <div class="search-inner">
+                  <i class="fas fa-search"></i>
+                  <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Buscar venta por cliente..."
+                  />
+                </div>
+              </div>
+
+              <button id="btnNuevaVenta" class="btn btn-new">
+                + Nueva venta
+              </button>
+            </div>
+
+            <div class="filters">
+              <div class="filter-group">
+                <label>Fecha desde</label>
+                <input type="text" id="fechaDesdeVenta" placeholder="Seleccionar fecha" />
+              </div>
+
+              <div class="filter-group">
+                <label>Fecha hasta</label>
+                <input type="text" id="fechaHastaVenta" placeholder="Seleccionar fecha" />
+              </div>
+
+              <div class="filter-group">
+                <label>Cliente</label>
+                <select id="filtroCliente">
+                  <option value="">Todos</option>
+                </select>
+              </div>
+
+              <div class="filter-actions">
+                <button class="btn-clear">Limpiar</button>
+                <button class="btn-apply">Aplicar</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tabla de Ventas -->
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Fecha</th>
+                  <th>Cliente</th>
+                  <th>Documento</th>
+                  <th>Materiales</th>
+                  <th>Total Venta</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="ventasTbody">
+                <tr>
+                  <td colspan="7" style="text-align: center; padding: 40px; color: #999;">
+                    Cargando ventas...
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- Contenedor para modales de ventas (se cargan dinámicamente) -->
+    <div id="modales-ventas-container"></div>
+
+    <script src="controller/js/libs/custom-alerts.js"></script>
+    <script src="controller/js/api.js"></script>
+    <script src="controller/js/libs/select.js"></script>
+    <script src="controller/js/libs/init-calendarios.js"></script>
+    <script src="controller/js/modal-manager.js"></script>
+    <script src="controller/js/botones-globales.js"></script>
+    <script src="controller/js/carga-menu.js"></script>
+    <script src="controller/js/carga-header.js"></script>
+    <script src="controller/js/perfil-dropdown.js"></script>
+    <script src="controller/js/carga-modales-ventas.js"></script>
+    <script src="controller/js/modales-compra-venta.js"></script>
+    <script src="controller/js/app-ventas.js"></script>
+  </body>
+</html>
+

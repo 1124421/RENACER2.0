@@ -1,0 +1,325 @@
+/* ============================================
+   ESTILOS ESPECÍFICOS PARA INFORMES
+   ============================================ */
+
+/* Forzar overflow visible en contenedores padres */
+html, body {
+  overflow: visible !important;
+  min-height: 100vh;
+}
+
+.main-content {
+  overflow: visible !important;
+}
+
+/* === Sección de filtros === */
+.filters {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-end;
+  overflow: visible !important;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 180px;
+  position: relative;
+  z-index: 10;
+  overflow: visible !important;
+}
+
+.filter-group label {
+  color: #444;
+  margin-bottom: 5px;
+  padding-left: 4px;
+}
+
+.filter-group input,
+.filter-group select {
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #fff;
+  color: #333;
+}
+
+.filter-group .menu-desplegable-trigger {
+  padding: 7px 12px !important;
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+  border-color: #2d5a47;
+  box-shadow: 0 0 0 3px rgba(45, 90, 71, 0.1);
+  outline: none;
+}
+
+.filter-group select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+.filter-group select option {
+  background: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 4px 0;
+  color: #333;
+}
+
+select option {
+  padding: 12px;
+  background-color: #ffffff;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.filter-buttons button {
+  height: 32px;
+  padding: 0 12px;
+  font-size: 13px;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-buttons .clear {
+  background: var(--bg-white);
+  border: 1px solid #ccc;
+  color: var(--text);
+}
+
+.filter-buttons .clear:hover {
+  background: #f5f5f5;
+  border-color: #aaa;
+}
+
+/* Botón Aplicar - Verde */
+.filter-buttons .apply {
+  background: #2d5a47;
+  color: white;
+}
+
+.filter-buttons .apply:hover {
+  background: #244a3a;
+}
+
+/* Botón Exportar - Azul */
+.filter-buttons .export {
+  background: #2196f3;
+  color: white;
+}
+
+.filter-buttons .export:hover {
+  background: #1976d2;
+}
+
+/* === Tabla de informes === */
+.table-container {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: visible;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: #f8f9fa;
+  text-align: left;
+  padding: 12px 15px;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+}
+
+td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+}
+
+tr:hover {
+  background: #f8f9fa;
+}
+
+td.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* Botones de acción - Mismo estilo que asociados */
+.action-btn,
+button.download {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 8px; /* Esquinas redondas */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  padding: 0;
+}
+
+.action-btn svg,
+button.download svg {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px; /* Esquinas redondas para iconos SVG */
+}
+
+/* Botón de Descargar */
+button.download {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+button.download:hover {
+  background: #bbdefb;
+}
+
+/* Botón de Editar */
+.action-btn.edit {
+  background: #e8f5e9;
+  color: #388e3c;
+}
+
+.action-btn.edit:hover {
+  background: #c8e6c9;
+}
+
+/* Botón de Eliminar */
+.action-btn.delete {
+  background: #ffebee;
+  color: #d32f2f;
+}
+
+.action-btn.delete:hover {
+  background: #ffcdd2;
+}
+/* ============================================
+  ESTILOS PARA LA VENTANA MODAL DE EXPORTACIÓN
+  ============================================ */
+
+/* 1. Fondo Oscuro Semitransparente (Overlay) */
+.modal-overlay {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Fondo gris oscuro con opacidad, tal como en la imagen */
+    background-color: rgba(0, 0, 0, 0.6); 
+    z-index: 9999; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+/* Clase para ocultar la modal (CRÍTICO) */
+.modal-overlay.hidden {
+    display: none !important;
+}
+
+/* 2. El Contenido de la Modal (el cuadro blanco) */
+.modal-content {
+    background-color: white;
+    padding: 30px; 
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); 
+    width: 320px; 
+    text-align: center;
+}
+
+/* Estilo del título "Exportar" */
+.modal-content h4 {
+    font-size: 1.3em;
+    font-weight: 600; 
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+/* 3. Contenedor de las Opciones (PDF/Excel) */
+.export-options {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px; 
+}
+
+/* 4. Estilo de cada Opción (PDF/Excel) */
+.option-item {
+    text-decoration: none;
+    color: #444; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0; 
+    border-radius: 8px; 
+    transition: all 0.2s ease;
+    width: 100px; 
+    font-size: 0.95em;
+    font-weight: 500;
+}
+
+.option-item:hover {
+    background-color: #f0f0f0; 
+    transform: translateY(-2px); 
+}
+
+/* 5. Estilo y Colores de los Iconos (según la imagen) */
+.icon-box {
+    width: 60px; 
+    height: 60px;
+    margin-bottom: 8px;
+    line-height: 60px;
+    font-size: 40px; 
+}
+
+.pdf-option .icon-box { 
+    color: #EA4335; /* Rojo vibrante */
+}
+.excel-option .icon-box { 
+    color: #107C41; /* Verde de Excel */
+}
+/* Clase para ocultar elementos específicos durante la generación del informe */
+.hide-for-report {
+    display: none !important;
+}

@@ -1,0 +1,76 @@
+
+    <!-- Modal Nuevo Asociado -->
+    <div id="asociadoModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>
+            <img
+              class="modal-title-icon"
+              src="assets/img/imagenes/usersolo.svg"
+              alt="Nuevo Asociado"
+              style="
+                width: 22px;
+                height: 22px;
+                filter: invert(63%) sepia(83%) saturate(356%) hue-rotate(78deg)
+                  brightness(95%) contrast(92%);
+              "
+            />
+            Nuevo Asociado
+          </h2>
+          <button class="close-modal" onclick="closeModal('asociadoModal')">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-section">
+            <h3 class="section-title">Datos del Asociado</h3>
+            <div class="form-group">
+              <label>Nombre completo del asociado</label>
+              <input type="text" id="nombreModalInicio" placeholder="Ingrese aquí" />
+            </div>
+            <div class="form-group">
+              <label>Documento</label>
+              <input type="text" id="documentoModalInicio" placeholder="Ingrese aquí" />
+            </div>
+            <div class="form-group">
+              <label>Teléfono</label>
+              <input type="tel" id="contactoModalInicio" placeholder="Ingrese aquí" />
+            </div>
+            <div class="form-group">
+              <label>Correo Electrónico</label>
+              <input type="email" id="correoModalInicio" placeholder="Ingrese aquí" />
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3 class="section-title">Datos Laborales</h3>
+            <div class="form-group">
+              <label>Fecha de Inicio</label>
+              <input type="text" id="fechaInicioModalInicio" class="flatpickr-input" placeholder="Seleccionar fecha" />
+            </div>
+            <div class="form-group">
+              <label>Tipo de contrato</label>
+              <input type="text" id="contratoModalInicio" placeholder="Ingrese aquí" />
+            </div>
+            <div class="form-group">
+              <label>Cargo</label>
+              <input type="text" id="cargoModalInicio" placeholder="Ingrese aquí" />
+            </div>
+            <div class="form-group">
+              <label>ID</label>
+              <input type="text" id="idUnicoModalInicio" placeholder="Ingrese aquí" />
+            </div>
+            <div class="form-group">
+              <label>Tipo de asociado</label>
+              <input type="text" id="tipoAsociadoModalInicio" placeholder="Ingrese aquí" />
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn-secondary" onclick="closeModal('asociadoModal')">
+            Cancelar
+          </button>
+          <button class="btn-primary">Guardar</button>
+        </div>
+      </div>
+    </div>

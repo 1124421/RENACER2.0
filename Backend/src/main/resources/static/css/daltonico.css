@@ -1,0 +1,184 @@
+/* ============================================
+   daltonico.css
+   Overrides de alto peso para eliminar verdes en modo daltónico
+   Se activa con: body.daltonico
+   ============================================ */
+
+/* Variables globales del modo */
+body.daltonico {
+  --primary: #1f6feb;
+  --primary-hover: #1158c7;
+  --text: #111827;
+  --text-light: #475569;
+  --border: #cbd5e1;
+  --bg-white: #ffffff;
+  --bg-gray: #f3f4f6;
+  background-color: #f3f6fb !important;
+  color: var(--text) !important;
+}
+
+body.daltonico h1,
+body.daltonico h2,
+body.daltonico h3,
+body.daltonico h4,
+body.daltonico h5,
+body.daltonico h6 {
+  color: var(--text) !important;
+}
+
+/* Links */
+body.daltonico a {
+  color: var(--primary);
+}
+
+/* Botones principales / activos */
+body.daltonico .btn-primary,
+body.daltonico .btn-new,
+body.daltonico .btn-apply,
+body.daltonico .btn-tab-asociado.active,
+body.daltonico button.btn-primary,
+body.daltonico button.btn-new {
+  background: var(--primary) !important;
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: #fff !important;
+}
+
+body.daltonico .btn-primary:hover,
+body.daltonico .btn-new:hover,
+body.daltonico .btn-apply:hover,
+body.daltonico .btn-tab-asociado.active:hover {
+  background: var(--primary-hover) !important;
+  background-color: var(--primary-hover) !important;
+}
+
+/* Bordes/acento (tablas, headers) */
+body.daltonico .header,
+body.daltonico thead,
+body.daltonico .table-container thead {
+  border-bottom-color: var(--primary) !important;
+}
+
+body.daltonico .user-avatar {
+  background: var(--primary) !important;
+}
+
+/* Flatpickr */
+body.daltonico .flatpickr-months .flatpickr-month {
+  background: var(--primary) !important;
+}
+body.daltonico .flatpickr-day.selected,
+body.daltonico .flatpickr-day.startRange,
+body.daltonico .flatpickr-day.endRange {
+  background: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+body.daltonico .flatpickr-day.today {
+  border-color: var(--primary) !important;
+  color: var(--primary) !important;
+}
+
+/* Selects personalizados */
+body.daltonico .select-selected,
+body.daltonico .select-items div:hover,
+body.daltonico .select-items div.same-as-selected {
+  border-color: var(--primary) !important;
+}
+
+/* Banners verdes del inicio */
+body.daltonico .welcome-banner {
+  background: #0b2a4a !important;
+  color: #fff !important;
+}
+body.daltonico .welcome-banner * {
+  color: #fff !important;
+}
+
+/* Materiales (estilos-materiales.css) */
+body.daltonico .search-container i {
+  color: var(--primary) !important;
+}
+
+body.daltonico .tab-btn.active {
+  background: var(--primary) !important;
+  color: #fff !important;
+  box-shadow: 0 3px 8px rgba(31, 111, 235, 0.25) !important;
+}
+body.daltonico .tab-btn.active:hover {
+  background: var(--primary-hover) !important;
+  box-shadow: 0 6px 12px rgba(31, 111, 235, 0.35) !important;
+}
+
+/* Perfil/Configuración (perfil.css) */
+body.daltonico .perfil-left {
+  border-color: var(--primary) !important;
+}
+body.daltonico .perfil-avatar-large,
+body.daltonico .perfil-contacto-item i {
+  background: var(--primary) !important;
+}
+body.daltonico .perfil-form-group input:not(:disabled):focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px rgba(31, 111, 235, 0.14) !important;
+}
+body.daltonico .configuracion-subtitulo i {
+  color: var(--primary) !important;
+}
+body.daltonico .btn-editar {
+  background: var(--primary) !important;
+  color: #fff !important;
+}
+body.daltonico .btn-editar:hover {
+  background: var(--primary-hover) !important;
+}
+
+/* Perfil (módulo y dropdown) */
+body.daltonico .perfil-header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%) !important;
+}
+body.daltonico .perfil-avatar,
+body.daltonico .perfil-dato-item i,
+body.daltonico .perfil-menu-item i.arrow-icon {
+  color: var(--primary) !important;
+}
+
+/* Reglas “catch-all” para inline styles que aún traen verde */
+body.daltonico [style*="#2d5a47"],
+body.daltonico [style*="#1e3a2f"],
+body.daltonico [style*="#1e4d3f"],
+body.daltonico [style*="#2a6550"],
+body.daltonico [style*="#244a3a"] {
+  /* No tocar layout; solo normalizar colores */
+  border-color: var(--primary) !important;
+}
+
+/* Inline color verde -> texto normal */
+body.daltonico [style*="color:#2d5a47"],
+body.daltonico [style*="color: #2d5a47"],
+body.daltonico [style*="color:#1e3a2f"],
+body.daltonico [style*="color: #1e3a2f"],
+body.daltonico [style*="color:#1e4d3f"],
+body.daltonico [style*="color: #1e4d3f"] {
+  color: var(--text) !important;
+}
+
+/* Inline fondo verde -> usar primario */
+body.daltonico [style*="background:#2d5a47"],
+body.daltonico [style*="background: #2d5a47"],
+body.daltonico [style*="background-color:#2d5a47"],
+body.daltonico [style*="background-color: #2d5a47"],
+body.daltonico [style*="background:#1e3a2f"],
+body.daltonico [style*="background: #1e3a2f"],
+body.daltonico [style*="background:#244a3a"],
+body.daltonico [style*="background: #244a3a"] {
+  background: var(--primary) !important;
+  background-color: var(--primary) !important;
+  color: #fff !important;
+}
+
+/* SVG con fill verde */
+body.daltonico [fill="#2d5a47"] {
+  fill: var(--primary) !important;
+}
+
+

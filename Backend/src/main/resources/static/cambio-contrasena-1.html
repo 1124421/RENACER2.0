@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="assets/img/1.1.png" />
+    <link rel="icon"type="image/png" href="assets/img/logo.PNG" media="(prefers-color-scheme: light)" />
+    <link rel="icon"type="image/png"href="assets/img/1.1.png"media="(prefers-color-scheme: dark)"/>
+    <title>Renacer - Restablecer Contraseña</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+  </head>
+  <body>
+    <main class="reset">
+      <div class="reset__background"></div>
+
+      <div class="reset__form flex-center">
+        <div class="reset__card">
+          <div class="reset__logo">
+            <img src="assets/img/logo.PNG" alt="logo de Planetapp" />
+          </div>
+          <h2 class="reset__title">Restablecer Contraseña</h2>
+          <p class="reset__subtitle">
+            Introduce tu correo y te enviaremos un código de verificación para
+            continuar.
+          </p>
+
+          <form id="reset-email-form">
+            <div class="reset__input-group">
+              <input
+                type="email"
+                id="reset-email"
+                placeholder="Ingresa aquí"
+                required
+              />
+            </div>
+            <button type="submit" class="reset__button btn--hover">
+              Enviar
+            </button>
+          </form>
+
+          <div class="reset__footer">
+            <a href="index.html" class="reset__link">Volver al inicio</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="controller/js/cambio_contraseña.js"></script>
+  </body>
+</html>
